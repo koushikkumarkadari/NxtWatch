@@ -12,17 +12,63 @@ import ProtectedRoute from './components/ProtectedRoute'
 import './App.css'
 
 class App extends Component {
+<<<<<<< HEAD
   state = {lightTheme: true}
+=======
+  state = {
+    lightTheme: true,
+    savedVids: [
+      {
+        id: '30b642bd-7591-49f4-ac30-5c538f975b15',
+        title:
+          'Sehwag shares his batting experience in iB Cricket | iB Cricket Super Over League',
+        thumbnailUrl:
+          'https://assets.ccbp.in/frontend/react-js/nxt-watch/ibc-sol-1-img.png',
+        channel: {
+          name: 'iB Cricket',
+          profileImageUrl:
+            'https://assets.ccbp.in/frontend/react-js/nxt-watch/ib-cricket-img.png',
+        },
+        viewCount: '1.4K',
+        publishedAt: 'Apr 19, 2019',
+      },
+    ],
+  }
+>>>>>>> dbbff48f9a46f0718baddf86e91655854e800075
 
   changeActiveTheme = () => {
     this.setState(prevState => ({activeTheme: !prevState.activeTheme}))
   }
 
+<<<<<<< HEAD
   render() {
     const {lightTheme} = this.state
     return (
       <ThemeContext.Provider
         value={{lightTheme, changeActiveTheme: this.changeActiveTheme}}
+=======
+  saveVid = vid => {
+    this.setState(prevState => ({savedVids: [...prevState.savedVids, vid]}))
+  }
+
+  unsaveVid = id => {
+    const {savedVids} = this.state
+    const newSet = savedVids.filter(each => each.id !== id)
+    this.setState({savedVids: newSet})
+  }
+
+  render() {
+    const {lightTheme, savedVids} = this.state
+    return (
+      <ThemeContext.Provider
+        value={{
+          lightTheme,
+          changeActiveTheme: this.changeActiveTheme,
+          savedVids,
+          saveVid: this.saveVid,
+          unsaveVid: this.unsaveVid,
+        }}
+>>>>>>> dbbff48f9a46f0718baddf86e91655854e800075
       >
         <Switch>
           <Route exact path="/login" component={Login} />
