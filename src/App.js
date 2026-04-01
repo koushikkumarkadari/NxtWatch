@@ -12,9 +12,6 @@ import ProtectedRoute from './components/ProtectedRoute'
 import './App.css'
 
 class App extends Component {
-<<<<<<< HEAD
-  state = {lightTheme: true}
-=======
   state = {
     lightTheme: true,
     savedVids: [
@@ -34,19 +31,11 @@ class App extends Component {
       },
     ],
   }
->>>>>>> dbbff48f9a46f0718baddf86e91655854e800075
 
   changeActiveTheme = () => {
     this.setState(prevState => ({activeTheme: !prevState.activeTheme}))
   }
 
-<<<<<<< HEAD
-  render() {
-    const {lightTheme} = this.state
-    return (
-      <ThemeContext.Provider
-        value={{lightTheme, changeActiveTheme: this.changeActiveTheme}}
-=======
   saveVid = vid => {
     this.setState(prevState => ({savedVids: [...prevState.savedVids, vid]}))
   }
@@ -68,7 +57,6 @@ class App extends Component {
           saveVid: this.saveVid,
           unsaveVid: this.unsaveVid,
         }}
->>>>>>> dbbff48f9a46f0718baddf86e91655854e800075
       >
         <Switch>
           <Route exact path="/login" component={Login} />

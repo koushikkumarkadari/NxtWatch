@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-import styledComponents from './styledComponents'
-
-const SavedVideos = () => <p>SavedVideos</p>
-=======
 import {Component} from 'react'
 import ThemeContext from '../../context/ThemeContext'
 
@@ -31,6 +26,5 @@ class SavedVideos extends Component {
     )
   }
 }
->>>>>>> dbbff48f9a46f0718baddf86e91655854e800075
 
 export default SavedVideos
